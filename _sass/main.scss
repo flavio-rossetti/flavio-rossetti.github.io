@@ -71,7 +71,7 @@
   --bs-dark-border-subtle: #adb5bd;
   --bs-white-rgb: 255, 255, 255;
   --bs-black-rgb: 0, 0, 0;
-  --bs-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --bs-font-sans-serif: system-ui, -apple-system, "Segoe UI", "Assistant", "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
   --bs-body-font-family: var(--bs-font-sans-serif);
@@ -171,8 +171,8 @@
   --bs-link-color-rgb: 153, 240, 172;
   --bs-link-hover-color-rgb: 153, 240, 172;
   --bs-code-color: #e685b5;
-  --bs-highlight-color: #dee2e6;
-  --bs-highlight-bg: #664d03;
+  --bs-highlight-color: #212529;/*#dee2e6;*/
+  --bs-highlight-bg: #F0ECE6; /*#664d03;*/
   --bs-border-color: #495057;
   --bs-border-color-translucent: rgba(255, 255, 255, 0.15);
   --bs-form-valid-color: #75b798;
@@ -192,6 +192,7 @@
     scroll-behavior: smooth;
   }
 }
+
 
 body {
   margin: 0;
@@ -325,9 +326,9 @@ small, .small {
 }
 
 mark, .mark {
-  padding: 0.1875em;
-  color: var(--bs-highlight-color);
-  background-color: var(--bs-highlight-bg);
+  padding: 0.05em !important;/*0.1875em*/
+  color: var(--bs-highlight-color) !important;
+  background-color: var(--bs-highlight-bg) !important;
 }
 
 sub,
@@ -703,7 +704,7 @@ progress {
 }
 
 .img-fluid {
-  max-width: 100%;
+  max-width: min(100%, 528px);
   height: auto;
 }
 
@@ -3851,6 +3852,12 @@ textarea.form-control-lg {
 .nav-fill .nav-item .nav-link,
 .nav-justified .nav-item .nav-link {
   width: 100%;
+}
+
+.nav-item {
+
+  padding-right: 2%;
+  padding-left: 2%;
 }
 
 .tab-content > .tab-pane {
@@ -8025,7 +8032,7 @@ textarea.form-control-lg {
 }
 
 .p-0 {
-  padding: 0 !important;
+  padding: 0.05em /*0*/ !important;
 }
 
 .p-1 {
@@ -11908,8 +11915,17 @@ html {
 }
 
 body {
-  font-family: Roboto;
+  font-family: "Assistant", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
 }
+
+.shadowed {
+  text-shadow: -3px 3px #069725;
+}
+
+
 
 a, a.nav-link {
   text-decoration: none;
@@ -11971,6 +11987,9 @@ main .embedly-card h4, main .embedly-card .h4 {
   aside {
     padding-right: 2.5rem !important;
     text-align: right;
+  }
+  .asidealt {
+    text-align: left !important;
   }
 }
 @media (max-width: 767.98px) {
