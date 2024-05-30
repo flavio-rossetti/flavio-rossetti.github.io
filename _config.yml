@@ -28,7 +28,8 @@ google_analytics: G-GXHD8BQNWY
 
 # Build settings
 #theme: minima
-#plugins:
+plugins: 
+   - jekyll-sitemap 
 #  - jekyll-feed
 
 # Exclude from processing.
