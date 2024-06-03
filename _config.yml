@@ -22,7 +22,7 @@ title: Flavio Rossetti
 email: flavio.rossetti@tecnico.ulisboa.pt
 description: Flavio Rossetti is a PhD student at Instituto Superior Técnico
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://localhost:4000" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://flavio-rossetti.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 google_analytics: G-GXHD8BQNWY
 
 
