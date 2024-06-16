@@ -2,7 +2,7 @@
     <meta name="keywords" content="Flavio Rossetti, Mathematics, Maths, General Relativity, Research">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <meta property="og:description" content="Flavio Rossetti is a PhD student at Instituto Superior Técnico.">
+    <meta property="og:description" content="{{ page.description }}">
 
     <meta property="og:title" content="{{ page.title }}">
 
@@ -43,6 +43,8 @@
 
     <script src="https://kit.fontawesome.com/1a8963f511.js" crossorigin="anonymous"></script>
     
+
+    <title>{{ page.title }}</title>
 
     {% if site.google_analytics and jekyll.environment == 'production' %}
     {% include analytics.html %}
