@@ -151,7 +151,11 @@ button:not(:disabled),[type=button]:not(:disabled){cursor:pointer;}
 .mb-lg-0{margin-bottom:0!important;}
 }
 .figure-img{margin-bottom:0.25rem;}
-html{font-size:21px;}
+html{
+  font-size:21px;
+  width: 100vw;
+  overflow-x: hidden;
+}
 body{font-family:"Assistant", sans-serif;font-optical-sizing:auto;font-weight:400;font-style:normal;}
 .shadowed{text-shadow:-3px 3px #069725;}
 a{text-decoration:none;}
