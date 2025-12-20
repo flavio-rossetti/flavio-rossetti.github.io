@@ -54,6 +54,7 @@ button:not(:disabled),[type=button]:not(:disabled){cursor:pointer;}
 }
 .d-inline-block{display:inline-block!important;}
 .border-bottom{border-bottom:var(--bs-border-width) var(--bs-border-style) var(--bs-border-color)!important;}
+.border-left{border-left:var(--bs-border-width) var(--bs-border-style) var(--bs-border-color)!important;}
 .h-100{height:100%!important;}
 .justify-content-center{justify-content:center!important;}
 .mt-3{margin-top:1rem!important;}
