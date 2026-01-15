@@ -18,8 +18,8 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-email: flavio.rossetti@tecnico.ulisboa.pt
-description: Flavio Rossetti is a PhD student at Instituto Superior Técnico
+email: flavio.rossetti@gssi.it
+description: Flavio Rossetti is a postdoctoral research fellow at GSSI
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://flavio-rossetti.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 google_analytics: G-GXHD8BQNWY
