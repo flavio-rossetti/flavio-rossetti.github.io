@@ -2,6 +2,13 @@
 <html class="h-100" lang="en-us" data-bs-theme="dark">
   <head>
   
+  <script>
+    (function () {
+      var hour = new Date().getHours();
+      document.documentElement.setAttribute("data-bs-theme", hour >= 7 && hour < 19 ? "light" : "dark");
+    }());
+  </script>
+  
   {% include head.html %}
 
 
@@ -9,45 +16,25 @@
   <body>
 
     <header>
-      <nav class="navbar navbar-expand-md navbar-light">
-
-        <div class="container-fluid" style="margin-bottom: 2%;">
-        <button aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation" class="collapsed mt-3 navbar-toggler" data-bs-target="#navbar" data-bs-toggle="collapse" style="margin-left:auto; margin-right:auto;" type="button">
-            <i class="fas fa-bars"></i>
-        </button>
-        <div class="collapse navbar-collapse" id="navbar">
-            <ul style="width: 100%; text-align:center;" class="navbar-nav me-auto mb-2 mb-lg-0 justify-content-center">
-
-              <li class="nav-item">
-                <a href="/index.html"><strong id="home_link" class="d-inline-block shadowed" style="font-weight:600">Home</strong></a>
-              </li>
-                
-              <li class="nav-item">
-                <a href="cv.html"><strong id="cv_link" class="d-inline-block" style="font-weight:600">CV</strong></a>
-              </li>
-              
-              <li class="nav-item">
-                <a href="research.html"><strong id ="research_link" class="d-inline-block" style="font-weight:600">Research</strong></a>
-              </li>
-                
-              <li class="nav-item">
-                <a href="talks.html"><strong id="talks_link" class="d-inline-block" style="font-weight:600">Talks</strong></a>
-              </li>
-
-
-            </ul>
+      <nav class="site-nav" aria-label="Primary navigation">
+        <div class="container-fluid">
+          <ul class="site-nav-list">
+            <li>
+              <a class="site-nav-link {% if page.url == '/' or page.url == '/index.html' %}active{% endif %}" href="/index.html">Home</a>
+            </li>
+            <li>
+              <a class="site-nav-link {% if page.url == '/cv.html' %}active{% endif %}" href="/cv.html">CV</a>
+            </li>
+            <li>
+              <a class="site-nav-link {% if page.url == '/research.html' %}active{% endif %}" href="/research.html">Research</a>
+            </li>
+            <li>
+              <a class="site-nav-link {% if page.url == '/talks.html' %}active{% endif %}" href="/talks.html">Talks</a>
+            </li>
+          </ul>
         </div>
-      </div>
-    </nav>
-
+      </nav>
     </header>
-
-    <script>
-      var homel = document.getElementById("home_link");
-      var cvl = document.getElementById("cv_link");
-      var researchl = document.getElementById("research_link");
-      var talkl = document.getElementById("talks_link");
-    </script>
 
     <div class="container">
       <div class="row">

@@ -1,0 +1,71 @@
+- title: "Global existence for a Fritz John equation in expanding FLRW spacetimes"
+  date: 2026-03-01
+  authors:
+    - name: "João Costa"
+      url: "https://ciencia.iscte-iul.pt/authors/joao-lopes-costa/"
+    - name: "Jesús Oliver"
+      url: "https://www.csueastbay.edu/directory/profiles/math/oliverjesus.html"
+  links:
+    - label: "arXiv:2603.02307"
+      url: "https://arxiv.org/abs/2603.02307"
+  status: "Submitted"
+
+- title: "Mass inflation from rough initial data for the spherically symmetric Einstein-Maxwell-scalar field system with \\( \\Lambda \\)"
+  date: 2025-06-01
+  links:
+    - label: "arXiv:2506.08075"
+      url: "https://arxiv.org/abs/2506.08075"
+  status: "Submitted"
+
+- title: "Hyperboloidal approach for linear and non-linear wave equations in FLRW spacetimes"
+  date: 2025-02-01
+  authors:
+    - name: "Alex Vañó-Viñuales"
+      url: "https://centra.tecnico.ulisboa.pt/team/?id=5432"
+  publication:
+    label: "Gen. Rel. Grav. 57, 79 (2025)"
+    url: "https://doi.org/10.1007/s10714-025-03409-x"
+    note: "part of a collection"
+    note_url: "https://link.springer.com/collections/jjghbiafhc"
+  links:
+    - label: "arXiv:2502.20520"
+      url: "https://arxiv.org/abs/2502.20520"
+
+- title: "Stability of the Cauchy horizon for cosmological black holes in spherical symmetry"
+  date: 2024-01-01
+  publication:
+    label: "PhD Thesis"
+    url: "https://scholar.tecnico.ulisboa.pt/records/SSzDKvK1qvFui6vfPKJdJkBFBLU_CS1g7-ox"
+
+- title: "Strong cosmic censorship for the spherically symmetric Einstein-Maxwell-charged-Klein-Gordon system with positive \\( \\Lambda \\): stability of the Cauchy horizon and \\( H^1 \\) extensions"
+  date: 2023-09-01
+  publication:
+    label: "Ann. Henri Poincaré 26, 675–753 (2025)"
+    url: "https://doi.org/10.1007/s00023-024-01454-x"
+  links:
+    - label: "arXiv:2309.14420"
+      url: "https://arxiv.org/abs/2309.14420"
+
+- title: "Decay of solutions of the wave equation in cosmological spacetimes - a numerical analysis"
+  date: 2023-02-01
+  authors:
+    - name: "Alex Vañó-Viñuales"
+      url: "https://centra.tecnico.ulisboa.pt/team/?id=5432"
+  publication:
+    label: "Class. Quantum Grav. 40, 175004 (2023)"
+    url: "https://doi.org/10.1088/1361-6382/ace7a6"
+  links:
+    - label: "arXiv:2302.06666"
+      url: "https://arxiv.org/abs/2302.06666"
+
+- title: "Explicit formulas and decay rates for the solution of the wave equation in cosmological spacetimes"
+  date: 2021-12-01
+  authors:
+    - name: "José Natário"
+      url: "https://www.math.tecnico.ulisboa.pt/~jnatar/"
+  publication:
+    label: "J. Math. Phys. 64, 032504 (2023)"
+    url: "https://doi.org/10.1063/5.0135092"
+  links:
+    - label: "arXiv:2112.00771"
+      url: "https://arxiv.org/abs/2112.00771"

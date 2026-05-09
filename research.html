@@ -12,82 +12,92 @@ description: Flavio Rossetti is a postdoctoral research fellow at GSSI, in L'Aqu
   MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
 </script>
 
-<main>
-         
-  <ol class="ollist" reversed style="margin-top: 2%; font-size: min(5vw, 1em);">
-    <li class="border-bottom li-padding">
-      <div class="fontweight600">Global existence for a Fritz John equation in expanding FLRW spacetimes</div> 
-      <div  class="small"><span class="text-muted">joint work with</span> <a target="_blank" href="https://ciencia.iscte-iul.pt/authors/joao-lopes-costa/"><span>João Costa</span></a> and <a href="https://www.csueastbay.edu/directory/profiles/math/oliverjesus.html" target="_blank"><span>Jesús Oliver</span></a></div>
-      <div  class="small">
-        <a target="_blank" class="main_color text-decoration-none rounded" href="https://arxiv.org/abs/2603.02307">
-        <span>arXiv:2603.02307</span>
-      </a>
-    </div>
-    <div  class="small"><span class="text-muted">Submitted</span></div>
-    </li>
-    <li class="border-bottom li-padding">
-      <div class="fontweight600">Mass inflation from rough initial data for the spherically symmetric Einstein-Maxwell-scalar field system with \( \Lambda \)</div> 
-      <div  class="small">
-        <a target="_blank" class="main_color text-decoration-none rounded" href="https://arxiv.org/abs/2506.08075">
-        <span>arXiv:2506.08075</span>
-      </a>
-    </div>
-    <div  class="small"><span class="text-muted">Submitted</span></div>
-    </li>
-    <li class="border-bottom li-padding">
-      <div class="fontweight600">Hyperboloidal approach for linear and non-linear wave equations in FLRW spacetimes</div> 
-      <div  class="small"><span class="text-muted">joint work with</span> <a target="_blank" href="https://centra.tecnico.ulisboa.pt/team/?id=5432"><span>Alex</span> <span>Vañó-Viñuales</span></a></div>
-      <div  class="small"><a target="_blank" class="main_color text-decoration-none rounded" href="https://doi.org/10.1007/s10714-025-03409-x"><b><span>Gen. Rel. Grav. 57, 79 (2025)</span></b></a> (part of a <a target="_blank" href="https://link.springer.com/collections/jjghbiafhc">collection</a>)</div> 
-      <div  class="small">
-        <a target="_blank" class="main_color text-decoration-none rounded" href="https://arxiv.org/abs/2502.20520">
-        <span>arXiv:2502.20520</span>
-      </a>
-    </div>
-    </li>
-    <li class="border-bottom li-padding">
-      <div class="fontweight600">Stability of the Cauchy horizon for cosmological black holes in spherical symmetry</div> 
-      <!--<div class="small"><span class="text-muted">PhD Thesis</span></div>-->
-      <div  class="small">
-      </span><a target="_blank" class="main_color text-decoration-none rounded" href="https://scholar.tecnico.ulisboa.pt/records/SSzDKvK1qvFui6vfPKJdJkBFBLU_CS1g7-ox"><b>PhD Thesis</b></a>
-    </div>
-    </li>
-    <li class="border-bottom li-padding">
-      <div class="fontweight600">Strong cosmic censorship for the spherically symmetric Einstein-Maxwell-charged-Klein-Gordon system with positive \( \Lambda \): stability of the Cauchy horizon and \( H^1 \) extensions</div> 
-      <div class="small"><a target="_blank" class="main_color text-decoration-none rounded" href="https://doi.org/10.1007/s00023-024-01454-x"><b>Ann. Henri Poincaré 26, 675–753 (2025)</b></a></div>
-      <div  class="small">
-        <a target="_blank" class="main_color text-decoration-none rounded" href="https://arxiv.org/abs/2309.14420">
-        <span>arXiv:2309.14420</span>
-      </a>
-    </div>
-    </li>
-    <li class="border-bottom li-padding">
-      <div class="fontweight600">Decay of solutions of the wave equation in cosmological spacetimes - a numerical analysis</div>
-      <div  class="small"><span class="text-muted">joint work with</span> <a target="_blank" href="https://centra.tecnico.ulisboa.pt/team/?id=5432"><span>Alex</span> <span>Vañó-Viñuales</span></a></div>
-      <div  class="small"><a target="_blank" class="main_color text-decoration-none rounded" href="https://doi.org/10.1088/1361-6382/ace7a6"><b><span>Class. Quantum Grav. 40, 175004 (2023)</span></b></a></div> 
-      <div  class="small"><a target="_blank" class="main_color text-decoration-none rounded" href="https://arxiv.org/abs/2302.06666">
-        <span>arXiv:2302.06666</span>
-      </a>
-      </div>
-    </li>
-    <li class="border-bottom li-padding">
-      <div class="fontweight600">Explicit formulas and decay rates for the solution of the wave equation in cosmological spacetimes</div>
-      <div  class="small"><span class="text-muted">joint work with</span> <a target="_blank" href="https://www.math.tecnico.ulisboa.pt/~jnatar/" target="_blank"><span>José</span> <span>Natário</span></a></div> 
-      <div  class="small"><a target="_blank" class="main_color text-decoration-none rounded" href="https://doi.org/10.1063/5.0135092"><b><span>J. Math. Phys. 64, 032504 (2023)</span></b></a></div>  
-      <div  class="small">
-        <a target="_blank" class="main_color text-decoration-none rounded" href="https://arxiv.org/abs/2112.00771">
-        <span>arXiv:2112.00771</span>
-      </a>
-      </div>
-    </li>
+<main class="research-page">
+  {% assign publications = site.data.publications | sort: "date" | reverse %}
+
+  <div class="publication-tools">
+    <label class="visually-hidden" for="publication-search">Search papers</label>
+    <input id="publication-search" class="publication-search" type="search" placeholder="Search title, co-author, journal, arXiv..." autocomplete="off">
+    <div id="publication-count" class="publication-count">{{ publications.size }} papers</div>
+  </div>
+
+  <ol id="publication-list" class="publications-list">
+    {% for publication in publications %}
+      {% capture publication_search_text %}
+        {{ publication.title }}
+        {% for author in publication.authors %} {{ author.name }} {% endfor %}
+        {% if publication.publication %} {{ publication.publication.label }} {{ publication.publication.note }} {% endif %}
+        {% for link in publication.links %} {{ link.label }} {% endfor %}
+        {{ publication.status }}
+      {% endcapture %}
+      <li class="publication-item" data-publication-text="{{ publication_search_text | strip_html | strip_newlines | downcase | escape }}">
+        <article class="publication-card">
+          <div class="publication-heading">
+            <h1 class="publication-title">{{ publication.title }}</h1>
+            <div class="publication-year">{{ publication.date | date: "%Y" }}</div>
+          </div>
+
+          {% if publication.authors %}
+            <div class="publication-authors">
+              <span class="text-muted">joint work with</span>
+              {% for author in publication.authors %}
+                {% if forloop.last and forloop.length > 1 %} and {% elsif forloop.index > 1 %}, {% endif %}
+                <a target="_blank" href="{{ author.url }}">{{ author.name }}</a>
+              {% endfor %}
+            </div>
+          {% endif %}
+
+          {% if publication.publication %}
+            <div class="publication-venue">
+              <a target="_blank" class="main_color text-decoration-none rounded" href="{{ publication.publication.url }}"><b>{{ publication.publication.label }}</b></a>{% if publication.publication.note %} ({% if publication.publication.note_url %}part of a <a target="_blank" href="{{ publication.publication.note_url }}">collection</a>{% else %}{{ publication.publication.note }}{% endif %}){% endif %}
+            </div>
+          {% endif %}
+
+          <div class="publication-links">
+            {% if publication.links %}
+              {% for link in publication.links %}
+                <a target="_blank" class="publication-link" href="{{ link.url }}">{{ link.label }}</a>
+              {% endfor %}
+            {% endif %}
+            {% if publication.status %}
+              <span class="publication-status">{{ publication.status }}</span>
+            {% endif %}
+          </div>
+        </article>
+      </li>
+    {% endfor %}
   </ol>
 
-  
+  <p id="publication-empty" class="publication-empty" hidden>No papers match your search.</p>
 </main>
 
 <script>
-  cvl.classList.remove("shadowed");
-  researchl.classList.add("shadowed");
-  talkl.classList.remove("shadowed");
-  homel.classList.remove("shadowed");
+  (function () {
+    var input = document.getElementById("publication-search");
+    var items = Array.prototype.slice.call(document.querySelectorAll(".publication-item"));
+    var count = document.getElementById("publication-count");
+    var empty = document.getElementById("publication-empty");
+
+    if (!input || !items.length || !count || !empty) {
+      return;
+    }
+
+    function updatePublications() {
+      var query = input.value.trim().toLowerCase();
+      var visible = 0;
+
+      items.forEach(function (item) {
+        var matches = !query || item.getAttribute("data-publication-text").indexOf(query) !== -1;
+        item.hidden = !matches;
+        if (matches) {
+          visible += 1;
+        }
+      });
+
+      count.textContent = query ? visible + " of " + items.length + " papers" : items.length + " papers";
+      empty.hidden = visible !== 0;
+    }
+
+    input.addEventListener("input", updatePublications);
+  }());
 </script>
-      

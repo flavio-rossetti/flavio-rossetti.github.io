@@ -34,29 +34,13 @@ description: Flavio Rossetti is a postdoctoral research fellow at GSSI, in L'Aqu
         under the supervision of <a href="https://www.math.tecnico.ulisboa.pt/~jnatar/"><span>José</span> <span>Natário</span></a> and <a href="https://ciencia.iscte-iul.pt/authors/joao-lopes-costa/"><span class="nowrap">Jo&#227;o</span> <span>Costa</span></a>. 
   </dd>
   <dd>
-    I am interested in mathematical relativity and hyperbolic PDEs. In particular, I have been studying linear and non-linear wave equations in the context of 
-    <div class="list-group">
-      <div class="list-group-item pb-0" style="border: 0 !important;"> 
-        <span>&#8226;</span> black hole spacetimes, and
-      </div>
-      <div class="list-group-item"  style="border: 0 !important;">
-        <span>&#8226;</span> homogeneous and isotropic universes,
-      </div>
-    </div>
-    as described by Einstein's gravitational theory.
+    I am interested in <strong>partial differential equations</strong> and <strong>mathematical relativity</strong>. Recently, I have been working on problems related to black hole interiors and to wave equations on expanding universes.
   </dd>
 </dl>
 
-<div class="row" style="margin-top:2em">
-  <div style="text-align:right; font-size: 0.5rem;">Last update: {{ site.time | date: "%B %Y" }}
-  </div>   
-</div>
+<p class="last-updated">
+  <span>Last update</span>
+  <time datetime="{{ site.time | date_to_xmlschema }}">{{ site.time | date: "%B %Y" }}</time>
+</p>
 
 </main>
-
-<script>  
-  cvl.classList.remove("shadowed");
-  researchl.classList.remove("shadowed");
-  talkl.classList.remove("shadowed");
-  homel.classList.add("shadowed");
-</script>
