@@ -35,3 +35,4 @@ gem "http_parser.rb", "~> 0.6.0", :platforms => [:jruby]
 
 gem "webrick", "~> 1.9.2"
 gem "csv" 
+gem "nokogiri", ">= 1.19.3"
