@@ -16,21 +16,33 @@ description: Flavio Rossetti is a postdoctoral research fellow at GSSI, in L'Aqu
   {% assign publications = site.data.publications | sort: "date" | reverse %}
 
   <div class="publication-tools">
-    <label class="visually-hidden" for="publication-search">Search works</label>
+    <label class="visually-hidden" for="publication-search">Search papers</label>
     <input id="publication-search" class="publication-search" type="search" placeholder="Search title, co-author, journal, arXiv..." autocomplete="off">
-    <div id="publication-count" class="publication-count">{{ publications.size }} works</div>
+    <div id="publication-count" class="publication-count">{{ publications.size }} papers</div>
   </div>
 
   <ol id="publication-list" class="publications-list">
     {% for publication in publications %}
       {% capture publication_search_text %}
         {{ publication.title }}
+        {{ publication.date | date: "%Y" }}
         {% for author in publication.authors %} {{ author.name }} {% endfor %}
         {% if publication.publication %} {{ publication.publication.label }} {{ publication.publication.note }} {% endif %}
-        {% for link in publication.links %} {{ link.label }} {% endfor %}
+        {% for link in publication.links %}
+          {{ link.label }}
+          {% if link.label contains "arXiv:" %}
+            {% assign arxiv_id = link.label | remove: "arXiv:" | strip %}
+            {% assign arxiv_year_prefix = arxiv_id | slice: 0, 2 | plus: 0 %}
+            {% if arxiv_year_prefix > 90 %}
+              19{{ arxiv_id | slice: 0, 2 }}
+            {% else %}
+              20{{ arxiv_id | slice: 0, 2 }}
+            {% endif %}
+          {% endif %}
+        {% endfor %}
         {{ publication.status }}
       {% endcapture %}
-      <li class="publication-item" data-publication-text="{{ publication_search_text | strip_html | strip_newlines | downcase | escape }}">
+      <li class="publication-item" data-publication-text="{{ publication_search_text | strip_html | strip_newlines | escape }}">
         <article class="publication-card">
           <div class="publication-heading">
             <h1 class="publication-title">{{ publication.title }}</h1>
@@ -68,7 +80,7 @@ description: Flavio Rossetti is a postdoctoral research fellow at GSSI, in L'Aqu
     {% endfor %}
   </ol>
 
-  <p id="publication-empty" class="publication-empty" hidden>No works match your search.</p>
+  <p id="publication-empty" class="publication-empty" hidden>No papers match your search.</p>
 </main>
 
 <script>
@@ -82,19 +94,31 @@ description: Flavio Rossetti is a postdoctoral research fellow at GSSI, in L'Aqu
       return;
     }
 
+    function normalizeText(text) {
+      return text
+        .toString()
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .toLowerCase();
+    }
+
+    items.forEach(function (item) {
+      item.normalizedPublicationText = normalizeText(item.getAttribute("data-publication-text") || "");
+    });
+
     function updatePublications() {
-      var query = input.value.trim().toLowerCase();
+      var query = normalizeText(input.value.trim());
       var visible = 0;
 
       items.forEach(function (item) {
-        var matches = !query || item.getAttribute("data-publication-text").indexOf(query) !== -1;
+        var matches = !query || item.normalizedPublicationText.indexOf(query) !== -1;
         item.hidden = !matches;
         if (matches) {
           visible += 1;
         }
       });
 
-      count.textContent = query ? visible + " of " + items.length + " works" : items.length + " works";
+      count.textContent = query ? visible + " of " + items.length + " papers" : items.length + " papers";
       empty.hidden = visible !== 0;
     }
 
